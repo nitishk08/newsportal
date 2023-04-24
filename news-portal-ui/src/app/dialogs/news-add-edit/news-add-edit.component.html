@@ -1,0 +1,65 @@
+<div mat-dialog-title>
+  <h1>News Portal Form</h1>
+</div>
+<form [formGroup]="newsPortalForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Ex. Amazon workers..."
+          formControlName="title"
+        />
+      </mat-form-field>
+      <div class="error"
+        *ngIf="
+          !newsPortalForm.controls['title']?.valid &&
+          (newsPortalForm.controls['title']?.dirty ||
+            newsPortalForm.controls['title']?.touched)
+        "
+      >
+        Title is required
+      </div>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea
+          matInput
+          formControlName="description"
+        ></textarea>
+      </mat-form-field>
+      <div class="error"
+        *ngIf="
+          !newsPortalForm.controls['description']?.valid &&
+          (newsPortalForm.controls['description']?.dirty ||
+            newsPortalForm.controls['description']?.touched)
+        "
+      >
+        Description is required
+      </div>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="categoryName">
+          <mat-option *ngFor="let val of category" [value]="val"
+            >{{ val }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">
+      Cancel
+    </button>
+    <button mat-raised-button color="primary" type="submit">
+      {{ data ? "Update" : "Save" }}
+    </button>
+  </div>
+</form>
