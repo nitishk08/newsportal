@@ -12,6 +12,8 @@
 Project is created with:
 
 Angular version 15.2.6
+Node version 18.16.0
+Npm version 9.6.4
 
 .Net 7 using swagger
 
@@ -25,33 +27,13 @@ To run the project:
 
 * Open the project using Visual Studio Code
 
+* Run npm install -- To download the required packages
+
 * Run ng serve for a ```dev server``` Navigate to ``` http://localhost:4200/. ``` The application will automatically reload if you change any of the source files.
 
 # For Backend
 
 * Open the project using Visual Studio 2022
-
-* Open appsettings.json file and change the database server name
-
-* Go to package manager console
-
-* If not installed: Install dotnet cli using command
-
-```
-
-$ dotnet tool install --global dotnet-ef
-
-$ dotnet tool update --global dotnet-ef
-
-```
-
-* Update migration:
-
-```
-
-$ dotnet ef database update
-
-```
 
 * Run the project
 
