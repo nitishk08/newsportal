@@ -16,6 +16,7 @@ Node version 18.16.0
 Npm version 9.6.4
 
 .Net 7 using swagger
+.Net7 Sdk 
 
 ## Setup:
 
@@ -37,6 +38,7 @@ To run the project:
 
 * Run the project
 
+Note - Please provide Same port number in Angular application news-portal-service.ts file. 
 
 * Enjoy!!!
 
